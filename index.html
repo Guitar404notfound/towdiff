@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            body{
+                margin:20px;
+                font-family:Arial;
+            }
+            .button-container{
+                text-align:center;
+                margin-bottom:30px;
+            }
+            .tab-button{
+                padding:12px 24px;
+                margin:0 10px;
+                border:none;
+                background:#007bff;
+                color:white;
+                cursor:pointer;
+                border-radius:4px;
+                transition:0.3s;
+            }
+            .tab-button:hover{
+                background:#0056b3;
+            }
+            .tab-button.active{
+                background:#004085;
+            }
+            .task-container{
+                display:none;
+            }
+            #task1 .center-iron{
+                position:relative;
+                width:500px;
+                height:320px;
+                margin:250px auto;
+                border:4px solid aquamarine;
+                background:url('9985fbdf-ef20-4d5d-a52c-c77c16471ea5.png');
+                z-index:2;
+                border-radius:50%;
+            }
+            #task1 .knowledge-box {
+                position: absolute;
+                width: 200px;
+                padding: 20px;
+                background: cadetblue;
+                border:4px dashed ghostwhite;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            #task1 #box1 { top: 250px; left: 200px; }
+            #task1 #box2 { top: 200px; right: 300px; }
+            #task1 #box3 { bottom: 80px; left: 50%; transform: translateX(-50%); }
+            
+            #task2{
+                width:1200px;
+                margin:0 auto;
+            }
+            #task2 .content{
+                display:flex;
+                gap:30px;
+            }
+            #task2 .left-column{
+                flex:2;
+            }
+            #task2 .right-column {
+                flex: 1;
+                display: flex;        
+                flex-direction: column; 
+                gap: 20px;             
+            }
+            #task2 .images{
+                display:flex;
+                gap:10px;
+                margin:10px 0;
+            }
+            #task2 .hot-news {
+                padding: 15px;
+                border-radius: 8px;
+                transition: 0.3s;
+            }
+            #task2 .hot-news.highlight {
+                order: -1; 
+                border: 2px solid #ff6b6b;
+                background: linear-gradient(135deg, #fff5f5, #ffecec);
+                box-shadow: 0 3px 10px rgba(255,107,107,0.1);
+            }
+            
+            .active-task {
+                display: block !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="button-container">
+            <button class="tab-button active" onclick="showTask('task1')">4-1 知识点视图</button>
+            <button class="tab-button" onclick="showTask('task2')">4-2 新闻咨询</button>
+        </div>
+        
+        <div id="task1" class="task-container active-task" style="background-color: black">
+            <div class="container">
+                <div class="center-iron"></div>
+                <div class="knowledge-box" id="box1">
+                    <h3 style="color:white">HTML基础和HTML5</h3>
+                    <ul style="color:lightblue">
+                        <li>HTML标签与属性</li>
+                        <li>HTML5多媒体（视频和音频）</li>
+                        <li>HTML5图像标签（画布和SVG)</li>
+                        <li>HTML5地理定位</li>
+                        <li>HTML5表单</li>
+                    </ul>
+                </div>
+                <div class="knowledge-box" id="box2">
+                    <h3 style="color:white">CSS基础和CSS3</h3>
+                    <ul style="color:floralwhite">
+                        <li>CSS选择器</li>
+                        <li>CSS样式</li>
+                        <li>CSS盒模型与定位</li>
+                        <li>CSS3的2D与3D转换</li>
+                        <li>CSS3新的边框效果</li>
+                    </ul>
+                </div>
+                <div class="knowledge-box" id="box3">
+                    <h3 style="color:white">JavaScript</h3>
+                    <ul style="color:papayawhip">
+                        <li>数据类型</li>
+                        <li>运算符</li>
+                        <li>基础语法</li>
+                        <li>BOM对象</li>
+                        <li>DOM对象</li>
+                        <li>JS特效</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="task2" class="task-container">
+            <div class="header">
+                <h2 style="color:firebrick">新闻咨询</h2>
+                <h3>太空探测</h3>
+            </div>
+            <hr>
+            <div class="content">
+                <div class="left-column">
+                    <div class="news-item">
+                        <h4>飞行200亿公里的旅行者1号，为何不会发生碰撞?</h4>
+                        <div class="images">
+                            <img src="9a504fc2d5628535308a9f8fdae686cba6ef63c9.webp" width="200">
+                            <img src="b219ebc4b74543a9a2196c54551e7a8fb901143a.webp" width="200">
+                        </div>
+                        <p class="auther">作者：寻巧资讯 | 发布时间：2023-08-01</p>
+                    </div>
+                    <div class="news-item">
+                        <h4>4亿公里外，火星车传回实拍影像，让我们看到火星表面荒凉的景象</h4>
+                        <div class="images">
+                            <img src="8d5494eef01f3a2924aa4875dc9d1c3d5d607c6b.webp" width="200">
+                            <img src="d53f8794a4c27d1ebfbf8ec05e6d0d62dcc43859.webp" width="200">
+                        </div>
+                        <p class="auther">作者：摧残科学 | 发布时间：2023-08-13</p>
+                    </div>
+                    <div class="news-item">
+                        <h4>太空中没有氧气，为什么陨石还能燃烧？燃烧必须要有氧气吗？</h4>
+                        <div class="images">
+                            <img src="0e2442a7d933c895be8b3c92cb83a3f7800200fd.webp" width="200">
+                            <img src="f9198618367adab4615ad2539c44631b8601e4b4.webp" width="200">
+                        </div>
+                        <p class="auther">作者：飞哥聊科学 | 发布时间：2020-12-29</p>
+                    </div>
+					<div class="news-item">
+					    <h4>星辰长驻 逐梦苍穹——神舟十九号乘组的太空坚守与探索</h4>
+					    <div class="images">
+					        <img src="caef76094b36acaff2984fb87945241f00e99ca2.webp" width="200">
+					        <img src="810a19d8bc3eb1354e940019a08201dcfc1f4468.webp" width="200">
+					    </div>
+					    <p class="auther">作者：凌云清潇 | 发布时间：2025-04-08</p>
+					</div>
+					<div class="news-item">
+					    <h4>2025年这些太空探索大事值得关注 中国将开展近地小行星探测任务</h4>
+					    <div class="images">
+					        <img src="b151f8198618367ac246f15ad718cadbb11ce5e1.webp" width="200">
+					        <img src="908fa0ec08fa513ddd00a26dc70614f4b3fbd953.webp" width="200">
+					    </div>
+					    <p class="auther">作者：中国科技新闻网 | 发布时间：2025-01-17</p>
+					</div>
+                </div>
+                <div class="right-column">
+                    <h3 style="color:brown">热文推荐</h3>
+                    <div class="hot-news">
+                        <a href="https://baijiahao.baidu.com/s?id=1818056403382955222&wfr=spider&for=pc"><h4>海夫利克极限算法：人类的寿命是120岁！</h4></a>
+                        <img src="91ef76c6a7efce1bbd8a62f3125be2d1b48f657b.webp" width="300">
+                    </div>
+					<div class="hot-news">
+					    <a href="https://baijiahao.baidu.com/s?id=1826262056360829365&wfr=spider&for=pc"><h4>白墙去污小妙招！轻松搞定顽固污渍，再也不用重新刷！</h4></a>
+					    <img src="0b55b319ebc4b7451288e812725a9b188b8215cf.webp" width="300">
+					</div>
+					<div class="hot-news">
+					    <a href="https://baijiahao.baidu.com/s?id=1778008714715360573&wfr=spider&for=pc"><h4>“八月十二用一宝，一年四季无烦恼”，八月十二到来，这话啥意思</h4></a>
+					    <img src="91529822720e0cf363bf54998ca82513bf09aa07.webp" width="300">
+					</div>
+                </div>
+            </div>
+        </div>
+        <script>
+        function showTask(taskId) {
+            document.querySelectorAll('.task-container').forEach(task => {
+                task.classList.remove('active-task');
+            });
+            document.getElementById(taskId).classList.add('active-task');
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        </script>
+    </body>
+</html>
+    
